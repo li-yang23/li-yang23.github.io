@@ -1,18 +1,18 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Yang Li",
+    "label": "PhD student",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "li-yang23@mails.tsinghua.edu.cn",
+    "phone": "",
+    "url": "https://li-yang23.github.io/",
+    "summary": "",
     "location": {
       "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "postalCode": "100084",
+      "city": "Haidian District",
+      "countryCode": "China",
+      "region": "Beijing"
     },
     "profiles": [
       {
@@ -24,38 +24,75 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "name": "Software Development Center, Bank of Beijing",
+      "position": "System Administrator",
+      "url": "",
+      "startDate": "2020-08-04",
+      "endDate": "2023-06-31",
+      "summary": "Responsible for the development of anti-fraud and risk control systems successively, as well as the development and management of related projects.",
       "highlights": [
-        "Relativity"
+        "Outstanding Contribution Team Award",
+        "Financial Technology Development Award"
       ]
     }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "Tsinghua University, Beijing, China",
+      // "url": "https://www.uzh.ch/",
+      "area": "Computer Network Architecture",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
+      "startDate": "2023-09-01",
+      "endDate": "now",
+      "score": ""
+      // "courses": [
+      //    "Network Security"
+      //  ]
+    },
+    {
+      "institution": "Xi'an JiaoTong University, Xi'an, Shaanxi, China",
+      // "url": "https://www.uzh.ch/",
+      "area": "Data Mining",
+      "studyType": "Master",
+      "startDate": "2017-09-04",
+      "endDate": "2020-07-21",
       "score": "",
       "courses": [
-        "Theory of Relativity"
+        "Data Mining and Machine Learning"
+      ]
+    },
+    {
+      "institution": "Central South University, Changsha, Hunan, China",
+      // "url": "https://www.uzh.ch/",
+      "area": "Intelligence Science and Technology",
+      "studyType": "Bachelor",
+      "startDate": "2013-09-04",
+      "endDate": "2017-07-01",
+      "score": "",
+      "courses": [
+        "Data Structure",
+        "Computer Network"
       ]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Meritorious Winner in Interdisciplinary Contest in Modeling",
+      "date": "2016-04-12",
+      "awarder": "COMAP",
+      "summary": "Primarily we discuss and examine major factors that affect clean water supply-demand balance, then based on Analytic Network Process(ANP) we establish the optimized model of water allocation to work out the optimal intervention plan."
+    },
+    {
+      "title": "2nd Price in the 15th China Post-Graduate Mathematical Contest in Modeling",
+      "date": "2018-12-01",
+      "awarder": "China Academic Degree and Graduate Education Development",
+      "summary": "We build a model to describe the relationship between delay time of airplanes and several factors, and then use and colony algorithm to find the optimal time-saving arrangement."
+    },
+    {
+      "title": "Excellent Postgraduate",
+      "date": "2019-11-30",
+      "awarder": "Xi'an JiaoTong University"
     }
   ],
   "certificates": [],
@@ -63,7 +100,7 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "Chinese",
       "fluency": "Native speaker"
     },
     {
@@ -71,7 +108,16 @@
       "fluency": "Fluent"
     }
   ],
-  "interests": [],
+  "interests": [
+    {
+      "name": "basketball",
+      "keywords": ["R.I.P Kobe"]
+    },
+    {
+      "name": "reading",
+      "keywords": ["general knowledge of western aesthetics(recently)"]
+    }
+  ],
   "references": [],
   "projects": []
 }
