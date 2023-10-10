@@ -41,7 +41,7 @@
     {
       "institution": "Tsinghua University, Beijing, China",
       // "url": "https://www.uzh.ch/",
-      "area": "AI&Security",
+      "area": "AI and Security",
       "studyType": "PhD",
       "startDate": "2023-09-01",
       "endDate": "now",
@@ -58,9 +58,7 @@
       "startDate": "2017-09-04",
       "endDate": "2020-07-21",
       "score": "",
-      "courses": [
-        "Data Mining and Machine Learning"
-      ]
+      "courses": ["Data Mining and Machine Learning"]
     },
     {
       "institution": "Central South University, Changsha, Hunan, China",
@@ -70,10 +68,7 @@
       "startDate": "2013-09-04",
       "endDate": "2017-07-01",
       "score": "",
-      "courses": [
-        "Data Structure",
-        "Computer Network"
-      ]
+      "courses": ["Data Structure", "Computer Network"]
     }
   ],
   "awards": [
