@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  XAI survey for networking
-date:   2023-10-13 21:03:30
-description: note for survey paper "Interpreting AI for Networking: Where We Are and Where We Are Going"
+title: XAI survey for networking
+date: 2023-10-13 21:03:30
+description: note for survey paper "Interpreting AI for Networking:Where We Are and Where We Are Going"
 tags: XAI Networking Survey
-categories: AI 
+categories: AI
 ---
 
 # 可解释AI与计算机网络综述
