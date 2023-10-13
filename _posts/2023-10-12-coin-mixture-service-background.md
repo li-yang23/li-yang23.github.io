@@ -6,15 +6,8 @@ tags: coin-mixing-service unfinished
 categories: bitcoin
 giscus_comments: true
 date: 2023-10-12
-featured: true
 toc:
-    begining: true
-
-authors:
-  - name: Yang Li
-    <!-- url: "https://en.wikipedia.org/wiki/Albert_Einstein" -->
-    affiliations:
-      name: CS, Tsinghua
+  begining: true
 ---
 
 # 混币服务
