@@ -1,8 +1,9 @@
+#! https://zhuanlan.zhihu.com/p/661807305
 ---
 layout: post
 title: Backgrounds of Coin Mixing Service
 description: some backgounds of coin mixing service
-tags: coin-mixing-service unfinished
+tags: coin-mixing-service
 categories: bitcoin
 giscus_comments: true
 date: 2023-10-12
