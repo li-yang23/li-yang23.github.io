@@ -1,4 +1,3 @@
-<!-- #! https://zhuanlan.zhihu.com/p/661807305 -->
 ---
 layout: post
 title: Backgrounds of Coin Mixing Service
