@@ -1,9 +1,9 @@
 ---
 layout: post
-title: (CCS22)"AI/ML for Network Security, the Emperor has no Clothes"论文阅读笔记
+title: (NDSS23)"Machine Unlearning of Features and Labels"论文阅读笔记
 description: notes for paper
-tags: XAI CCS22 unfinished
-categories: AI NetworkSecurity
+tags: AI NDSS23
+categories: AI MachineUnlearning
 giscus_comments: true
 date: 2023-11-02
 
