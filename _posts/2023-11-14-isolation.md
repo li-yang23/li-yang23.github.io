@@ -2,7 +2,7 @@
 layout: post
 title: Isolation
 description: 02-隔离机制
-tags: class-note system-security unfinished
+tags: class-note system-security
 categories: system-security
 giscus_comments: true
 date: 2023-11-14
@@ -52,3 +52,12 @@ toc:
 
 > 语言虚拟机/基于软件的错误隔离/二进制插桩（binary instrumentation）/类型系统...
 
+在没有硬件加强机制，或者进程抽象成本过高时，需要使用基于软件的隔离
+
+隔离软件组件的方法
+
++ 存储隔离：影响所有的加载和存储
++ 控制流整合：确保所有控制流都在使用加载和存储的控制流图中
++ 完全仲裁（complete mediation）：取消所有特权指令
++ 组件边界处设立缓冲区：
+  + 比如隔离的代码间使用的类似系统调用的接口，需要保证调用是正确的
