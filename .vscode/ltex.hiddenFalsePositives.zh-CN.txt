@@ -3,3 +3,4 @@
 {"rule":"wb4","sentence":"^\\Q不同对齐过的模型对于道德基础维度有一定的侧重和倾向。\\E$"}
 {"rule":"wb4","sentence":"^\\Q其道德对齐程度有一定的提升。\\E$"}
 {"rule":"wa5","sentence":"^\\Q将嵌入张量转换回)\\E$"}
+{"rule":"wa5","sentence":"^\\Q将嵌入张量转换回token\\E$"}
