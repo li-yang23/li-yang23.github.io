@@ -6,3 +6,7 @@
 {"rule":"wa5","sentence":"^\\Q将嵌入张量转换回token\\E$"}
 {"rule":"wb4","sentence":"^\\Qoutput）：AI系统可能产生无意或故意不精确的输出，\\E$"}
 {"rule":"wa5","sentence":"^\\QPbRL也面临着若干问题：\\E$"}
+{"rule":"wb4","sentence":"^\\Q训练数据和环境只是真实部署场景的不完美的近似，\\E$"}
+{"rule":"YU7_YU8","sentence":"^\\QDRO）：因为对于分布迁移的敏感性也可能来自对与核心概念无关的伪相关或捷径特征的依赖\\E$"}
+{"rule":"YU7_YU8","sentence":"^\\QDRO）：因为对于分布迁移的敏感性也可能来自对与核心概念无关的伪相关或捷径特征的依赖。\\E$"}
+{"rule":"YU7_YU8","sentence":"^\\Q系统在与真实世界明显不同的单一agent设定下训练\\E$"}
