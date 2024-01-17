@@ -40,19 +40,16 @@
   "education": [
     {
       "institution": "Tsinghua University, Beijing, China",
-      // "url": "https://www.uzh.ch/",
-      "area": "AI and Security",
+      "url": "https://tsinghua.edu.cn/",
+      "area": "LLMs safety",
       "studyType": "PhD",
       "startDate": "2023-09-01",
       "endDate": "now",
       "score": ""
-      // "courses": [
-      //    "Network Security"
-      //  ]
     },
     {
       "institution": "Xi'an JiaoTong University, Xi'an, Shaanxi, China",
-      // "url": "https://www.uzh.ch/",
+      "url": "https://xjtu.edu.cn/",
       "area": "Data Mining",
       "studyType": "Master",
       "startDate": "2017-09-04",
@@ -62,7 +59,7 @@
     },
     {
       "institution": "Central South University, Changsha, Hunan, China",
-      // "url": "https://www.uzh.ch/",
+      "url": "https://csu.edu.cn/",
       "area": "Intelligence Science and Technology",
       "studyType": "Bachelor",
       "startDate": "2013-09-04",

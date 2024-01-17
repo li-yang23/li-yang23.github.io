@@ -2,7 +2,7 @@
 layout: post
 title: 大模型对齐综述
 description: notes for "AI Alignment：A Comprehensive Survey"
-tags: ethical-value-alignment
+tags: ai-alignment
 categories: AI
 giscus_comments: true
 date: 2024-01-05

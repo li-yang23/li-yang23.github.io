@@ -2,7 +2,7 @@
 layout: post
 title: 大模型道德价值观对齐问题剖析笔记
 description: notes for "unpacking the Ethical Value Alignment in Big Models"
-tags: ethical-value-alignment
+tags: ai-alignment
 categories: AI
 giscus_comments: true
 date: 2023-11-09

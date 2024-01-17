@@ -2,7 +2,7 @@
 layout: post
 title: 论文阅读杂记
 description: notes for papers do not need to write a whole blog
-tags: ethical-value-alignment
+tags: ai-alignment
 categories: AI
 giscus_comments: true
 date: 2024-01-16
