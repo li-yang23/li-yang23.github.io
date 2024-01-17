@@ -8,7 +8,7 @@
     "url": "https://li-yang23.github.io/",
     "summary": "",
     "location": {
-      "address": "2712 Broadway St",
+      "address": "Tsinghua University",
       "postalCode": "100084",
       "city": "Haidian District",
       "countryCode": "China",
@@ -16,9 +16,9 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "Github",
+        "username": "li-yang23",
+        "url": "https://github.com/li-yang23"
       }
     ]
   },
