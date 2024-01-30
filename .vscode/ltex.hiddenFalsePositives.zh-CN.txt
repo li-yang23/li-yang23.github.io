@@ -16,3 +16,4 @@
 {"rule":"wa5","sentence":"^\\Q一些工作对后门触发器进行逆向工程，\\E$"}
 {"rule":"wb4","sentence":"^\\Q存在边的替换边上的算子类型）。\\E$"}
 {"rule":"wa5","sentence":"^\\Q图重构损失\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$就是重构的邻接矩阵与输入的邻接矩阵的二值交叉熵，\\E$"}
+{"rule":"BU","sentence":"^\\Q大语言模型：设\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$在有限时间内补全输入字符串s∈S。\\E$"}
