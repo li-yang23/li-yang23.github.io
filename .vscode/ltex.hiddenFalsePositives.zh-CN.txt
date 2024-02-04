@@ -18,3 +18,4 @@
 {"rule":"wa5","sentence":"^\\Q图重构损失\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$就是重构的邻接矩阵与输入的邻接矩阵的二值交叉熵，\\E$"}
 {"rule":"BU","sentence":"^\\Q大语言模型：设\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$在有限时间内补全输入字符串s∈S。\\E$"}
 {"rule":"wa5","sentence":"^\\Q通过将有害性和有用性解耦的方式有效地避免了众包工人对紧张状态的困惑，\\E$"}
+{"rule":"wa5","sentence":"^\\QDRO使用二值交叉熵作为优化目标\\E$"}
