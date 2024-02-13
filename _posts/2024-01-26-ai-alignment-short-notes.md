@@ -69,6 +69,11 @@ date: 2024-01-26
    5. 在偏好模型这里独立训练两个模型，奖励模型和RLHF一致，使用偏好数据度量回答的有用性偏好。成本模型使用有害性偏好标注度量有害性偏好（方式和奖励模型一致），再加上有害性真实标签的度量，使有害和无害样本的成本函数差距尽可能大。
    6. 在强化学习阶段使用拉格朗日方法将成本函数和奖励函数结合到一起，然后使用PPO算法进行训练
    7. > 又多了一个模型，这一共是policy+reference+reward+cost一共四个模型了，训练资源要求更高了
+3. Statistical Rejection Sampling Improves Preference Optimization
+   1. 解决DPO和SLiC等offline方法的偏好对采样问题
+   2. DPO中奖励模型的缺失限制了它从最优策略中采样偏好对的能力。SLiC只能从SFT策略中采样偏好对。
+   3. 方法采用SFT策略模型、奖励排名模型和prompt作为输入。首先通过拒绝抽样方法对最优策略的响应进行采样，然后在标记的偏好对上拟合分类模型。在损失函数的选择上根据偏好数据训练二值分类器，对策略概率进行归一化，得到DPO的SVM变体作为归一化似然的铰链损失。在偏好数据的分布上先训练一个上面提到的reward ranking model，用其推导原始奖励函数，进而推导出policy模型，从这个policy模型上采样response并用奖励评分模型标注偏好得到偏好数据集。拒绝采样方法上使用SFT模型生成回答，并交由评分函数进行评分，最后根据评分和高斯分布采样的值的大小来决定样本是否采用
+   4. 首先使用现有的preference data，训练一个pair-wise的reward ranking model，然后使用统计拒绝采样算法，通过这个reward model和SFT policy来近似地生成optimal policy的序列pair。给这些序列对用reward model打标后就可以套用分类loss来训练policy了。
 
 ## EACL
 

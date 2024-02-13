@@ -19,3 +19,6 @@
 {"rule":"BU","sentence":"^\\Q大语言模型：设\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q$在有限时间内补全输入字符串s∈S。\\E$"}
 {"rule":"wa5","sentence":"^\\Q通过将有害性和有用性解耦的方式有效地避免了众包工人对紧张状态的困惑，\\E$"}
 {"rule":"wa5","sentence":"^\\QDRO使用二值交叉熵作为优化目标\\E$"}
+{"rule":"wa3","sentence":"^\\Q提出了GNN上遗忘的两个目标：删除边的一致性（需要删除的边的两个端点在遗忘后被判断相连的概率应当与随机两个节点预判相连的概率接近）和邻域影响性\\E$"}
+{"rule":"wa5","sentence":"^\\Q在损失函数的选择上使用一个二值分类器作为\\E$"}
+{"rule":"wa5","sentence":"^\\Q在损失函数的选择上根据偏好数据训练二值分类器，\\E$"}
