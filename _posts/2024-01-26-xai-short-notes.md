@@ -11,7 +11,7 @@ date: 2024-01-26
 
 ### 2023
 
-1. AIRS: Explanation for Deep Reinforcement Learning based Security Applications{#xai-uns23-1}
+1. AIRS: Explanation for Deep Reinforcement Learning based Security Applications
    1. 深度强化学习方法的可解释性问题，设计了一个新的模型来预测每个状态对于强化学习最终奖励的影响程度
    2. 已有工作的问题：主要关注于特征级别的解释，在给定步骤解释动作，无法解释在整体任务上的成败；使用价值函数评估状态重要性无法为DRL提供高准确度的解释，且价值函数不是一直可获得；粗粒度的全局解释无法解释单一的一次运行；现有工作不关注解释的稳定性和有效性
    3. 方法假设可以获知DRL方法的环境信息（输入）和获得的最终奖励。方法不需要接触价值函数和policy模型的参数，可以将模型视为黑盒。
