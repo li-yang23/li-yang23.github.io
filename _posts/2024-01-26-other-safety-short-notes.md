@@ -2,7 +2,7 @@
 layout: post
 title: 安全论文阅读杂记
 description: notes for safety papers do not need to write a whole blog
-tags: trojan attacks
+tags: trojan attacks short-notes
 categories: AI-safety
 giscus_comments: true
 date: 2024-01-26
@@ -38,34 +38,7 @@ date: 2024-01-26
    6. 搜索协议这里为从范围内每个副本数B搜索满足安全性要求下成本函数最低的T，然后更新最优的$$(B,T)$$参数对为成本函数最低时的参数对。
    7. > 当然隐私性是靠2PC协议完成的
 
-## ICLR
-
-### 2023
-
-1. GNNDELETE: A General Strategy For Unlearning In Graph Neural Networks
-   1. 图神经网络上的机器遗忘问题，提出了一种使用外部模块的遗忘方式
-   2. 攻击场景应当是白盒场景，操作方能够接触训练数据和模型结构，能够添加模块对模型进行继续训练
-   3. 提出了GNN上遗忘的两个目标：删除边的一致性（需要删除的边的两个端点在遗忘后被判断相连的概率应当与随机两个节点预判相连的概率接近）和邻域影响性（遗忘前后节点的表征应当足够接近）
-   4. 设计了一个外部模块用于进行遗忘，在每个GNN层都添加一个同样的模块，如果节点属于遗忘边的端点则使用可学习参数进行遗忘，如果不属于则不进行操作
-   5. *这个方法需要能够接触数据和模型，感觉相较已有方法对于场景的要求是最严格的，但好处是不吃模型，什么GNN模型都可以添加*
-   6. *以及可以看看它这个随机挑两个节点的是怎么实现的*
-
-### 2024
-
-1. Towards Understanding Factual Kbowledge Of Large Language Models
-   1. 提出了一个新的数据集，用于测试LLM保存事实性知识和程度的范围
-   2. 在数据集上研究LLMs是否可以组合多个事实，及时更新事实性知识，对多个事实进行推理，识别细微的事实差异，并抵抗对抗样本。
-   3. 结果说明现有的LLMs仍然缺乏事实性知识，并且存在各种虚假的相关性。
-   4. > 这个后面可以看一下实验怎么设计的，可能有用
-
 ## Arxiv
-
-### 2023
-
-1. Distill to Delete: Unlearning in Graph Networks with Knowledge Distillation
-   1. 图神经网络的遗忘问题，提出使用知识蒸馏来进行遗忘
-   2. 提出遗忘的目标是连贯性（在要遗忘的数据集上和完全重训的模型有类似的结果）、完整性（在保留的数据集上和完全重训的模型有类似的结果）
-   3. 使用了两个模型推理进行蒸馏，destroyer模型通过支持中性或负面知识来遗忘目标知识，preserver模型通过支持正面的知识或相连节点的嵌入来保留知识。destroyer模型负责通过遗忘数据集来达成连贯性目标，preserver模型负责通过保留数据集来达成完整性目标
 
 ### 2024
 
@@ -89,3 +62,8 @@ date: 2024-01-26
    1. 多模态llm幻觉检测问题，提出了一个新的benchmark，以及一个统一的检测框架
    2. 基本主张提取涉及在生成的图像到文本生成或文本到图像生成中的用户查询的响应中提取核心主张；主张的自主选择工具提示MLLM为每个主张自动生成相关问题。这些问题旨在确定每项主张所需的特定工具类型，并确定工具的输入；并行工具执行部署一套同时运行的专用工具，从其输出中提供证据，以可靠地验证潜在的幻觉；使用理由的幻觉验证将收集到的证据汇总起来，指导底层MLLM判断该主张是否幻觉，并给出解释的理由。
    3. 感觉是个技术报告，不知道如何继续研究
+5. Data Poisoning for In-context Learning
+   1. 提出了三种对in-context learning prompt进行中毒攻击的方法，使用prompt最后一个hidden state的分布变化作为损失来判断攻击的有效性，使用超参数限制修改的字符数量，避免改变程度过大引起注意
+   2. 或许可以试试可视化一下hidden state的状态，看看prompt对hidden state的影响
+6. SKIP \N: A Simple Method To Reduce Hallucination In Large Vision-Language Models
+   1. 视觉语言模型幻觉的技术报告，通过在prompt里面添加限制和在decoding strategy里面限制\n来避免生成新自然段，从而避免新自然段产生的语义偏移

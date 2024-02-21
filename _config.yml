@@ -31,7 +31,7 @@ impressum_path: # set to path to include impressum link in the footer, use the s
 # -----------------------------------------------------------------------------
 
 # code highlighter theme
-highlight_theme_light: github # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme_light: friendly # https://github.com/jwarby/jekyll-pygments-themes
 highlight_theme_dark: native # https://github.com/jwarby/jekyll-pygments-themes
 
 # repo color theme
@@ -268,7 +268,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["ai-alignment", "XAI", "system-security"] # these tags will be displayed on the front page of your blog
+display_tags: ["ai-alignment", "XAI", "system-security", "short-notes"] # these tags will be displayed on the front page of your blog
 display_categories: ["AI", "system-security"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------

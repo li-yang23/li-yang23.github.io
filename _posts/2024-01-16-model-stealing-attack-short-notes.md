@@ -2,7 +2,7 @@
 layout: post
 title: model stealing attack论文阅读杂记
 description: notes for model stealing attack papers do not need to write a whole blog
-tags: model-stealing-attack
+tags: model-stealing-attack short-notes
 categories: AI-safety
 giscus_comments: true
 date: 2024-01-26
@@ -23,8 +23,6 @@ date: 2024-01-26
    1. 针对图片预训练编码器的模型提取攻击，替代模型结构自定了ResNet
    2. 攻击目标是使用少量的API查询构建一个与预训练图片编码器效果类似的替代模型，攻击场景是黑盒场景，攻击方有一个用于查询API和训练替代模型的数据集，攻击方可以查询编码器服务的API，获取编码器对于图片数据编码后的特征表征向量。
    3. 方法首先使用图片数据向编码器API发送查询获取表征向量，然后计算和替代模型得到的表征向量的距离获得第一个损失，为了避免替代数据集规模导致的次优结果，使用数据加强方法得到加强的图片数据，为了避免过高的API查询成本，基于对比学习的对相似样本学习到相似表征的特点，使用原图片查询得到的表征向量代替加强图片的查询结果，与强化图片由替代模型得到的表征向量计算距离得到第二个损失，两个损失联合训练替代模型。
-> 是我的错觉吗，不搞系统级别的攻击的话看过的这几篇攻击方法都好简单直观，就是训练啊......
-1. 
 
 ## USENIX security
 
