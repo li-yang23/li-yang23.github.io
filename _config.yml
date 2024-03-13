@@ -195,7 +195,7 @@ latest_posts:
 # -----------------------------------------------------------------------------
 
 # Markdown and syntax highlight
-markdown: kramdown
+markdown: GFM
 highlighter: rouge
 kramdown:
   input: GFM
