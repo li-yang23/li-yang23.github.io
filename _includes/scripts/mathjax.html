@@ -4,6 +4,11 @@
     window.MathJax = {
       tex: {
         tags: 'ams'
+      },
+      tex2jax: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)']],
+        displayMath: [ ['$$', '$$'] ],
+        processEscape: true,
       }
     };
   </script>
