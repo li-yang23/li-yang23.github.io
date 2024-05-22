@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 安全论文阅读杂记
+title: 幻觉论文阅读杂记
 description: notes for hallucination papers do not need to write a whole blog
 tags: hallucination short-notes
 categories: AI-safety llm
@@ -12,7 +12,7 @@ date: 2024-02-19
 
 1. [ACL] On Exposure Bias, Hallucination and Domain Shift in Neural Machine Translation
    1. 暴露偏差对于神经机器遗忘的效果的影响，实验分析了暴露偏差与生成幻觉文本之间的关系
-   2. 使用教师强迫的训练只是将模型暴露在黄金历史中，而在推断过程中先前的预测可能是错误的。所以使用教师强制训练的模型可能过度依赖先前预测的单词，这将加剧错误传播，出现一个token预测错导致后面的token全都预测错的现象
+   2. 使用教师强迫的训练知识将模型暴露在黄金历史中，而在推断过程中先前的预测可能是错误的。所以使用教师强制训练的模型可能过度依赖先前预测的单词，这将加剧错误传播，出现一个token预测错导致后面的token全都预测错的现象
    3. 将翻译幻觉定义为翻译出还算流畅但与原文本意思不同的译文的现象。实验发现标签平滑在其他方面提高了翻译质量，而最小风险训练（MRT）对幻觉的数量有明显的影响。
    4. MRT倾向于在较后的时间步增加模型的确定性，参考译文的增长幅度比干扰译文的增长幅度大。
    5. **总的来说**，MRT修改了模型的训练目标，除了对数概率还引入了译文和标签的差异度，从而有效减轻了幻觉。说明**次优的训练目标也会导致模型出现幻觉**

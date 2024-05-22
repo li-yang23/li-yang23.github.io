@@ -195,10 +195,10 @@ latest_posts:
 # -----------------------------------------------------------------------------
 
 # Markdown and syntax highlight
-markdown: GFM
+markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM
+  input: kramdown
   syntax_highlighter_opts:
     css_class: "highlight"
     span:
