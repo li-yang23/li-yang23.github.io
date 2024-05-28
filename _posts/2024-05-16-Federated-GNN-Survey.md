@@ -5,7 +5,7 @@ description: notes for Federated Graph Neural Networks： Overview, Techniques a
 tags: machine-unlearning federated-learning short-notes
 categories: AI-safety
 giscus_comments: true
-date: 2024-05-16
+date: 2024-05-27
 ---
 ## 术语和分类
 
