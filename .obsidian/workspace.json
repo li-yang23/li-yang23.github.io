@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "bdeac1957afebc48",
+    "type": "split",
+    "children": [
+      {
+        "id": "fd4c0d325d902630",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98cbc600b38775f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4d2f59539782cf02",
+    "type": "split",
+    "children": [
+      {
+        "id": "0827099182349b49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4deaf89cba3f9cc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "57170025f461d734",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "$",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5cac0b3add058d5f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a5ddaa1891d7f65e",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0a8057c48c8d63e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34084d46e135caf3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8a61f7c0d94c74cf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6218750df5b22edf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "acaf75cc934a4c2e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2024-05-16-Federated-GNN-Survey.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "98cbc600b38775f8",
+  "lastOpenFiles": [
+    "_posts/2024-07-09-guap.md",
+    "_posts/2024-05-16-Federated-GNN-Survey.md",
+    "_posts/2024-05-28-federated-unlearning.md",
+    "_posts/2024-06-26-model-size-gpu-storage-consumption.md"
+  ]
+}
