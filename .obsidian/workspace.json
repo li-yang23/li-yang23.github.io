@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "file": "_posts/2024-07-09-guap.md",
                 "mode": "source",
                 "source": true
               }
             }
+          },
+          {
+            "id": "50295fd7c3519e7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-07-25-llm-unlearning-survey.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a5ddaa1891d7f65e",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "file": "2024-07-25-llm-unlearning-survey.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-05-16-Federated-GNN-Survey.md",
+                "file": "2024-07-25-llm-unlearning-survey.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-05-16-Federated-GNN-Survey.md"
+                "file": "2024-07-25-llm-unlearning-survey.md"
               }
             }
           }
@@ -146,9 +160,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "98cbc600b38775f8",
+  "active": "50295fd7c3519e7c",
   "lastOpenFiles": [
     "_posts/2024-07-09-guap.md",
+    "2024-07-25-llm-unlearning-survey.md",
     "_posts/2024-05-16-Federated-GNN-Survey.md",
     "_posts/2024-05-28-federated-unlearning.md",
     "_posts/2024-06-26-model-size-gpu-storage-consumption.md"
