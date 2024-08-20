@@ -31,8 +31,8 @@ date: 2024-07-25
 训练数据的内容可能与当前社会价值观不符，包括基于性别、种族、种族、性取向或年龄的歧视性语言，通常表现为刻板印象或偏见。比如有研究发现了性别代词与职业之间的强关联。训练数据的内容还有可能包含歧视相关的仇恨，暴力或有害言论。使用包含了这些内容的数据预训练的模型可能不止会保留这些偏见有害行为，还有可能在某种情况下加剧这些行为。
 机器学习模型，不仅必须保护个人隐私，还应遵循道德价值观和原则[^UN1948]，以及法律和社会规范。与不歧视、公平、仁慈和非恶意等原则保持一致至关重要。现有法律法规也开始关注机器学习技术的安全与规范[^EC2019]，因此与道德价值观对齐可能向模型遗忘方法提出要求，可以采用遗忘方法来识别和消除这种歧视性或有害行为的根源，使模型与现行的社会规范保持一致。
 
-[^UN1948]: [Universal Declaration of Human Rights | OHCHR](https://www.ohchr.org/en/universal-declaration-of-human-rights)
-[^EC2019]: [Ethics guidelines for trustworthy AI | Shaping Europe’s digital future (europa.eu)](https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai)
+[^UN1948]: [Universal Declaration of Human Rights(OHCHR)](https://www.ohchr.org/en/universal-declaration-of-human-rights)
+[^EC2019]: [Ethics guidelines for trustworthy AI (europa.eu)](https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai)
 ## 遗忘任务的类型 
 ### 普通遗忘要求
 《通用数据保护条例》（GDPR）第17条规定的“被遗忘权”指出：“数据主体有权要求控制者立即删除与其相关的个人数据，在以下任一情形出现时，控制者有义务立即删除这些个人数据。”对于google而言，实施方式主要围绕从搜索结果中移除互联网上存在的（且非数据主体自行发布的）包含数据主体个人信息的文件。**这种删除并不意味着必须从搜索结果中删除数据主体的所有信息，而仅删除数据主体请求删除的信息。** 这如何适用于大型语言模型（LLMs）尚需进一步分析。
