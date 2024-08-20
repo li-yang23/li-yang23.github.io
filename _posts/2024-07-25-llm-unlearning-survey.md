@@ -12,14 +12,14 @@ date: 2024-07-25
 
 遗忘的需求主要来自道德原则，国家和国际条例，以及行为准则。通常来说，与个人隐私相关的保护条例（GDPR）以及对知识产权的保护驱动着对于包括大模型在内的软件系统的遗忘的研究。
 ### 隐私保护
-在预训练时，大模型需要使用大量从网络上获取的数据进行训练，错误配置的网络服务可以包括个人或组织内部的私人数据，这些数据可以被搜索引擎索引并自由访问。这些非预期公开的数据可能最终会出现在用于LLM预训练的训练数据集中。在后续的微调中，隐私数据可能会被用来微调预训练模型使其适应下游任务。训练数据中的数据很容易被记住然后被泄露出来[^Shokri2017][^Salem2018]，其中的边缘数据更是如此[^Smith2023]，而这些出现次数很少的边缘数据很可能与个人信息相关（就是因为只与某些人相关，所以才在边缘）。
+在预训练时，大模型需要使用大量从网络上获取的数据进行训练，错误配置的网络服务可以包括个人或组织内部的私人数据，这些数据可以被搜索引擎索引并自由访问。这些非预期公开的数据可能最终会出现在用于LLM预训练的训练数据集中。在后续的微调中，隐私数据可能会被用来微调预训练模型使其适应下游任务。训练数据中的数据很容易被记住然后被泄露出来[^Shokri2017][^Salem2018]，其中的边缘数据更是如此[^smith2023]，而这些出现次数很少的边缘数据很可能与个人信息相关（就是因为只与某些人相关，所以才在边缘）。
 针对机器学习模型的最基础的攻击方法就是成员推理攻击，攻击者会尝试判断一个给定的数据节点是否包含在训练数据中。本质而言，成员推理攻击是要找到模型在见到训练数据前后的表现分别是什么，表现的区别可以使用顿时，分类置信度或其他标准来衡量。对于大模型而言，一个常见指标是迷惑度，即模型对于一个给定的文本序列的确定程度。
 原来的工作一般认为针对模型推理攻击的脆弱性与模型的过拟合有关[^Yeom2018][^Blanco-Justicia2023]，但对于大模型而言却不一定，因为大模型使用海量的数据进行训练，而且往往只训练很少的epoch次数，所以很难达到过拟合，但一些攻击仍然说明大模型可以记住训练数据。
 
 [^Shokri2017]: [[1610.05820] Membership Inference Attacks against Machine Learning Models (arxiv.org)](https://arxiv.org/abs/1610.05820)
-[^Smith2023]: [[2310.01424] Identifying and Mitigating Privacy Risks Stemming from Language Models: A Survey (arxiv.org)](https://arxiv.org/abs/2310.01424)
-[^Yeom2018]: [[1709.01604] Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting (arxiv.org)](https://arxiv.org/abs/1709.01604)
-[^Salem2018]: [[1806.01246] ML-Leaks: Model and Data Independent Membership Inference Attacks and Defenses on Machine Learning Models (arxiv.org)](https://arxiv.org/abs/1806.01246)
+[^smith2023]: [[2310.01424] Identifying and Mitigating Privacy Risks Stemming from Language Models: A Survey (arxiv.org)](https://arxiv.org/abs/2310.01424)
+[^Yeom2018]: [[1709.01604] Privacy Risk in Machine Learning：Analyzing the Connection to Overfitting (arxiv.org)](https://arxiv.org/abs/1709.01604)
+[^Salem2018]: [[1806.01246] ML-Leaks：Model and Data Independent Membership Inference Attacks and Defenses on Machine Learning Models (arxiv.org)](https://arxiv.org/abs/1806.01246)
 [^Blanco-Justicia2023]:[[2206.04621] A Critical Review on the Use (and Misuse) of Differential Privacy in Machine Learning (arxiv.org)](https://arxiv.org/pdf/2206.04621)
 ### 版权保护
 版权保护和隐私保护很像，都是不希望生成的内容里面包含特定的信息，但版权保护的要求比隐私保护更明确。隐私保护希望个人信息不要以任何方式生成，而版权保护希望保护内容不要逐字生成，即不要一模一样地生成。因为隐私保护法并不保护事实，仅保护事实被表达地方式。因此，任何准备提取“准确”信息的信息提取攻击都足以检查版权法的合规性（侵犯版权需要提取逐字信息），但它们不足以检查隐私合规性（即使提取的有关某人的信息已被改写，隐私也可能受到侵犯）。
@@ -40,9 +40,9 @@ date: 2024-07-25
 ### 数据项遗忘请求
 这种类型的任务要求遗忘模型中包含的一项或多项特定的数据节点或样本。这种任务在面对表格或图像数据的时候很常见，因为这些数据中的数据节点定义很明确，比如表格中的一行数据或者一张图片。但在自然语言处理中数据节点之间的区别就没那么明显，一个token可以是一个数据节点，整个句子，整个文档也可以是一个数据节点。
 ### 特征或概念遗忘请求
-这种任务要求模型以往关于给定主题的所有信息，这些信息可能分布在不同的句子和文档中，比如有问题研究如何让模型遗忘关于哈利波特的所有知识[^Eldan2023]。可以采用类似的方法来遵守隐私要求，从模型中删除有关数据主体的所有信息。
+这种任务要求模型以往关于给定主题的所有信息，这些信息可能分布在不同的句子和文档中，比如有问题研究如何让模型遗忘关于哈利波特的所有知识[^eldan2023]。可以采用类似的方法来遵守隐私要求，从模型中删除有关数据主体的所有信息。
 
-[^Eldan2023]:[[2310.02238] Who's Harry Potter? Approximate Unlearning in LLMs (arxiv.org)](https://arxiv.org/abs/2310.02238)
+[^eldan2023]:[[2310.02238] Who's Harry Potter? Approximate Unlearning in LLMs (arxiv.org)](https://arxiv.org/abs/2310.02238)
 
 ### 类遗忘请求
 这类任务要求移除一个类别的所有信息，在面部识别之类的识别人的场景下很常见，比如在某人离职后要求遗忘所有能够识别这个人的信息，让模型无法继续识别这个人。一个简单方法是将对应类别的logit概率归0，但也仅在黑盒场景下有效。
@@ -80,7 +80,7 @@ date: 2024-07-25
 ## LLM中的数字遗忘方式
 ### 数据预处理和模型重训
 第一种方法是仔细检查并选择预训练和微调阶段使用的数据，从中去掉和隐私相关的数据。Meta训练Llama2的时候限制了使用具有大量隐私信息的数据，他们分析了数据中的性别，国籍，性取向，宗教等潜在偏见，但并没有对数据做删减。还使用了HateBert对仇恨内容进行了分析，发现有$$0.2\%$$的内容是潜在有害的。
-第二种方法是通过文本净化（或者文本匿名化）来限制训练阶段的隐私信息数量。一般来说是手动完成的，但近期也有自动化的方法，通过命名实体识别来识别潜在的隐私或敏感项，然后从数据中删除或匿名化[^Sanchez-Batet2016][^Hassan2019]
+第二种方法是通过文本净化（或者文本匿名化）来限制训练阶段的隐私信息数量。一般来说是手动完成的，但近期也有自动化的方法，通过命名实体识别来识别潜在的隐私或敏感项，然后从数据中删除或匿名化[^Sanchez-Batet2016,^Hassan2019]
 第三种方法是去重，即找到并删除训练数据中的重复文本，重复文本更容易受到成员推理攻击，因此去重可以卡诺一个避免模型记忆（可能导致隐私，版权，鲁棒性或者对齐问题）的有效方法。
 
 [^Sanchez-Batet2016]: C-sanitized: A privacy model for document redaction and sanitization.
@@ -89,15 +89,15 @@ date: 2024-07-25
 ### 隐私保护的预训练方法
 隐私保护的预训练方法可以限制单一节点对于模型的影响，目的是用隐私训练方法保护隐私性，而不是像前面方法对于数据进行挑选
 - 差分隐私随机梯度下降法（DP-SGD）[^dp-sgd]：差分隐私方法限制了能够从数据集中推理出单个对象的正确信息的概率，如果对象是一条记录，对象出现和消失之后差分隐私机制的输出应当几乎不变。机器学习中差分隐私一般通过DP-SGD训练方法实现，一般实现的是一个宽松方法$$(\epsilon,\delta)-DP$$，可以以$$(1-\delta)$$的几率满足$$\epsilon-DP$$。在大模型中或者广义的文本数据保护中，非常难以定义哪些是需要保护的个体对象，由此限制了DP-SGD的应用
-- 教师集合隐私聚合（PATE）：PATE[^PATE]在不同的私有数据子集上训练多个模型（即教师模型），然后将这些模型的预测结果以一种保护隐私的方式聚合起来，以标记新训练实例，从而训练一个学生模型。这种方法的核心优势在于，它能够在不直接访问私有数据的情况下，利用这些数据训练出一个性能良好的模型。PATE框架通过在聚合教师模型的预测时引入噪声，来保护数据的隐私性。
+- 教师集合隐私聚合（PATE）：PATE[^pate]在不同的私有数据子集上训练多个模型（即教师模型），然后将这些模型的预测结果以一种保护隐私的方式聚合起来，以标记新训练实例，从而训练一个学生模型。这种方法的核心优势在于，它能够在不直接访问私有数据的情况下，利用这些数据训练出一个性能良好的模型。PATE框架通过在聚合教师模型的预测时引入噪声，来保护数据的隐私性。
 
-[^DP-SGD]: Deep learning with differential privacy
-[^PATE]: Scalable private learning with pate 
+[^dp-sgd]: Deep learning with differential privacy
+[^pate]: Scalable private learning with pate 
 
 ### 机器遗忘
 因为大模型高昂的训练成本，重新训练来消除不需要的行为开始不切实际了。机器遗忘用于从LLM中移除已经经过预训练或者微调的知识，而不进行重训。这些机制依赖于进一步的微调，通常伴随着对抗性目标，用于识别与不需要的信息相关的参数及其修改，以及参数的算术运算。
 ### Prompt工程
-指定的prompt可以在微调后进一步控制模型行为，这些方法并不修改模型参数，并且可以通过输入对抗prompt绕过。但在生成模型对话的开头插入精心构建的prompt可以使其避免输出隐私，偏见或有害内容。比如[ustun2024]中使用prompt来要求模型判断内容是否有害，并且在有害时拒绝回答，拒绝了88%的有害请求。
+指定的prompt可以在微调后进一步控制模型行为，这些方法并不修改模型参数，并且可以通过输入对抗prompt绕过。但在生成模型对话的开头插入精心构建的prompt可以使其避免输出隐私，偏见或有害内容。比如[^ustun2024]中使用prompt来要求模型判断内容是否有害，并且在有害时拒绝回答，拒绝了88%的有害请求。
 
 [^ustun2024]: Aya model: An instruction finetuned open-access multilingual language model.
 
@@ -118,7 +118,7 @@ LOO[^LOO]使用leave-one-out策略来降低SISA的训练成本并保持推理可
 [^LOO]:Forgetting private textual sequences in language models via leave-one-out ensemble 
 
 ### 梯度上升
-主要想法是微调所有模型参数来最大化在目标token上的损失。在有代表敏感信息的目标token序列后，Jang等人[^Jang2022]对这些token序列的原始损失函数进行削弱。给定一个模型$$f(x;\theta)$$和一个token序列$$x=(x_1,...,x_T)$$，对$$x$$的损失可以表示为
+主要想法是微调所有模型参数来最大化在目标token上的损失。在有代表敏感信息的目标token序列后，Jang等人[^jang2022]对这些token序列的原始损失函数进行削弱。给定一个模型$$f(x;\theta)$$和一个token序列$$x=(x_1,...,x_T)$$，对$$x$$的损失可以表示为
 $$
 \mathcal{L}_x(\theta)=-\sum_{t=1}^T\log(p_{\theta}(x_t\vert x_{<t}))
 $$
@@ -130,15 +130,15 @@ $$
 $$
 \theta=\theta+\eta\nabla_{\theta}\mathcal{L}(\theta)
 $$
-作者发现一次性地遗忘多个样本会显著降低LM的性能，而顺序地遗忘这些样本可以减轻LM的性能下降。方法在文本分类和对话任务上进行测试，并用提取相似度[^jang2022]和记忆准确性[^triumala2022]进行评估。梯度上升方法仅需要需要被遗忘的数据，并且某些时候可以强化模型的泛化能力[^Yoon2023]，但也可以导致模型失去对语言的理解[^Eldan2023]，而且遗忘的成功取决于特定的目标数据以及需要被遗忘的数据的领域[^smith2023]。
+作者发现一次性地遗忘多个样本会显著降低LM的性能，而顺序地遗忘这些样本可以减轻LM的性能下降。方法在文本分类和对话任务上进行测试，并用提取相似度[^jang2022]和记忆准确性[^triumala2022]进行评估。梯度上升方法仅需要需要被遗忘的数据，并且某些时候可以强化模型的泛化能力[^Yoon2023]，但也可以导致模型失去对语言的理解[^eldan2023]，而且遗忘的成功取决于特定的目标数据以及需要被遗忘的数据的领域[^smith2023]。
 SeUL方法[^seul]在特定的敏感分块（span）上而不是整个token序列上使用梯度上升来保留LLM的泛化能力，提出了两种选择敏感span的标记方法，在线方法认为拥有低预测概率（即高困惑度）的token是敏感的，离线方法使用了上下文学习能力来标记敏感span。作者使用了敏感提取相似度和敏感记忆准确度来度量在文本分类和对话任务上的遗忘效果，尽管SeUL相较GA支持保留可用性，有效的遗忘，但标记方法可能在识别隐私token的准确性上有所限制。
 Yao等人[^yao2023]发现仅使用梯度上升无法有效遗忘不合适的行为，在正常样本上保持性能比遗忘更难实现，用于指导LLMs在正常任务上保持效用的正常数据格式极大地影响了正常性能。并在此观察的基础上提出了一个最小化三个损失函数的方法，通过同时( 1 )在遗忘样本上应用梯度上升，( 2 )在遗忘样本上强制随机输出，( 3 )最小化原始模型和遗忘模型在正常样本上的预测之间的KL散度，以保持正常效用来更新LLM完成遗忘。作者发现强制随机输出可以帮助模型遗忘不想要的输出。虽然可以在遗忘和模型可用性之间获得更好的平衡，方法需要大量的训练批次来同时完成遗忘和可用性保留。
 
-[^Jang2022]: Knowledge unlearning for mitigating privacy risks in language models.
-[^Triumala2022]: Memorization without overfitting: Analyzing the training dynamics of large language models.
+[^jang2022]: Knowledge unlearning for mitigating privacy risks in language models.
+[^triumala2022]: Memorization without overfitting: Analyzing the training dynamics of large language models.
 [^Yoon2023]: Gradient ascent post-training enhances language model generalization.
-[^SeUL]: Selective forgetting: Advancing machine unlearning techniques and evaluation in language models.
-[^Yao2023]: Large language model unlearning.
+[^seul]: Selective forgetting: Advancing machine unlearning techniques and evaluation in language models.
+[^yao2023]: Large language model unlearning.
 
 ### 知识蒸馏
 知识蒸馏方法将遗忘模型作为学生模型，模仿拥有想要的行为的老师模型。知识差距对齐（KGA）[^kga]方法利用训练数据、待遗忘数据和外部数据进行遗忘，以产生一个更新的模型，该模型在遗忘数据上表现出与在未见数据上相似的行为，同时保留对其余数据的效用。知识差距（knowledge gap）指使用不同的数据训练的模型在预测分布上的差异。对齐是通过最小化遗忘模型在遗忘数据上的预测和原始模型在未知数据上的预测的分布差异（KL散度）完成的。为保持模型可用性，在处理保留数据时，将原模型作为遗忘模型的老师，以最小化分布差异。知识蒸馏方法的优点在于可以适用于不同的模型和任务，但需要训练两个模型然后微调所有模型参数的方式限制了在大模型上的适用性。遗忘需要训练数据，遗忘数据和与遗忘数据没有重合的外部数据，遗忘模型的可用性与 遗忘数据和外部数据的规 模高度相关。
@@ -199,6 +199,8 @@ Kumar等人[^Kumar2022]提出了两个SISA的变体来提升在大模型上的�
 LEACE提出了一种闭式解方法，通过对表征的最小化修改来避免线性分类层检测到某些概念，通过应用一个称为“概念擦除”的过程，擦除每一个中间表示中关于目标概念的所有线性信息。LEACE可以用于提升公平性和可解释性，但也有可能减弱可用性，因为会擦出不相关特征，并且还需要在训练中缓存隐藏状态，需要额外的存储要求。并且有效性限制在part-of-speech，可用性没有被验证。
 有偏见的LLM的表征中的性别信息可以被分为事实性别信息和性别偏见。事实性别信息包括语法或语义特征，但性别偏见指模型将某些单词与特定性别关联的倾向。Limisiewicz等人[^Limisiewicz2022]尝试通过修改上下文嵌入来缓解预训练模型的性别偏见。他们使用一个正交变换来分离模型嵌入中编码的词法和句法信息，然后从嵌入空间中过滤出偏见子空间并且保留事实性别信息的子空间。尽管这种方法仅在上下文嵌入上进行线性变换因此很高效，但无法保证所有偏见相关的维度被过滤掉了。因为偏见信号可能被非线性编码在模型中，及时整个子空间被移除了，信息可以从模型的下一层中恢复出来。
 
+[^Limisiewicz2022]:Don’t forget about pronouns：Removing gender bias in language models without losing factual gender information.
+
 ## 输入输出调整
 此类方法将大模型看作黑盒，仅要求能够接触模型的输入输出而不要求深入模型内部工作流程。这种方法在某些用户无法接触模型权重的场景非常实用（比如基于API的模型），但从隐私保护法条（RTBF）的角度而言，这种方法不提供任何真是的隐私保护能力，因为模型仍旧能够保留理应遗忘的知识。
 
@@ -214,7 +216,7 @@ SERAC方法[^serac]使用基于记忆的模型编辑方法，将大模型当作�
 
 [^serac]: Memorybased model editing at scale.
 [^Zhang2024]: A comprehensive study of knowledge editing for large language models.
-[^MemPrompt]:Memory-assisted prompt editing to improve gpt-3 after deployment.
+[^memprompt]:Memory-assisted prompt editing to improve gpt-3 after deployment.
 
 ### 上下文学习
 ICUL[^icul]在推理阶段构建了一个特定的上下文，让模型分辨是否在训练时从来没见过特定的数据节点。ICUL包含三步
@@ -224,4 +226,4 @@ ICUL[^icul]在推理阶段构建了一个特定的上下文，让模型分辨是
 
 标签反转旨在移除特定的训练样本对模型输出的影响，第二步旨在削弱标签翻转的影响。ICUL使用了LiRA-Forget测试进行评估，并且偶尔超越了白盒方法。但其有效性依赖于模型的上下文学习能力，并且仅在标签翻转可行的文本分类任务上进行了测试。
 
-[^ICUL]: In-context unlearning: Language models as few shot unlearners
+[^icul]: In-context unlearning: Language models as few shot unlearners
