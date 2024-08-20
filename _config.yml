@@ -21,7 +21,7 @@ repository               : "li-yang23/li-yang23.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Yang Li"
   pronouns         : # example: "she/her"  
   bio              : "PhD Candidate in Tsinghua University"
