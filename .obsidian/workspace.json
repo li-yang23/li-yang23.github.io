@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-02-03-DRO.md",
+                "file": "_posts/2024-08-15-LLM-and-GNN.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9ea1ec7782a0a5a3",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-02-03-DRO.md",
+                "file": "_posts/2024-08-15-LLM-and-GNN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-02-03-DRO.md",
+                "file": "_posts/2024-08-15-LLM-and-GNN.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-02-03-DRO.md"
+                "file": "_posts/2024-08-15-LLM-and-GNN.md"
               }
             }
           }
@@ -148,11 +149,11 @@
   },
   "active": "86c12f9106908474",
   "lastOpenFiles": [
+    "_posts/2024-02-03-DRO.md",
     "_posts/2015-08-14-blog-post-4.md",
     "_posts/2012-08-14-blog-post-1.md",
     "_posts/2013-08-14-blog-post-2.md",
     "_posts/2014-08-14-blog-post-3.md",
-    "_posts/2024-02-03-DRO.md",
     "_posts/2024-05-28-federated-unlearning.md",
     "_posts/2024-08-15-LLM-and-GNN.md",
     "_posts/2199-01-01-future-post.md"
