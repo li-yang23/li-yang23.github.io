@@ -8,4 +8,4 @@ date: 2024-02-25
 location: "Beijing, China"
 ---
 
-I worked as teaching assistant for undergraduate course Digital Logic Circuit in the Spring Term 2023-2024. My primary responsibilities include grading assignments and answering questions.
+I worked as a **teaching assistant** for the undergraduate course Digital Logic Circuit in the Spring Term of 2023-2024. My primary responsibilities include grading assignments and answering questions.
