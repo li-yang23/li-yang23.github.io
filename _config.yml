@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Yang Li / PhD Candidate"
+title                    : "Yang Li / Student"
 title_separator          : "-"
 name                     : &name "Yang Li"
 description              : &description "Student"
