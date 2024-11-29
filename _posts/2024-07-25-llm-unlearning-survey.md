@@ -222,7 +222,7 @@ SERAC方法[^serac]使用基于记忆的模型编辑方法，将大模型当作�
 
 [^serac]: Memorybased model editing at scale.
 [^Zhang2024]: A comprehensive study of knowledge editing for large language models.
-[^memprompt]:Memory-assisted prompt editing to improve gpt-3 after deployment.
+[^memprompt]: Memory-assisted prompt editing to improve gpt-3 after deployment.
 
 #### 上下文学习
 ICUL[^icul]在推理阶段构建了一个特定的上下文，让模型分辨是否在训练时从来没见过特定的数据节点。ICUL包含三步
