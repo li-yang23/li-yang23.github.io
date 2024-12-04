@@ -49,7 +49,7 @@ MA(\boldsymbol{x})&\leq\frac{1}{\vert D'\vert}\sum_{\boldsymbol{x'}\in D'}MA(\bo
 $$
 ## 本文怎么说明效果的
 
-本文使用了在整个Pile预料数据集上预训练的GPT-Neo-125M/1.3B/2.7B和在部分去重的Pile数据集和一些其他领域数据集上预训练的OPT-125M/1.3B/2.7B作为基座模型。从[Training Data Extraction Challenge](https://github.com/google-research/lm-extraction-benchmark)中采样了一些样本作为目标数据来度量隐私风险，原数据中包含Pile预料数据集的16个领域的15,000个样本（每个的token序列长度都是200）。然后使用了9个不同的数据集来评估遗忘之后的模型可用性，包括语言推理能力（Hellaswag，Lambada）、常识推理能力（Winagrande，COPA），科学推理能力（ARC-Easy，ARC-Challenge，Piqa，MathQA，PubmedQA）。还是用了四个对话数据集来衡量模型的泛化能力（Wizard of Wikipedia，Empathetic Dialogues，Blended Skill Talk，Wizard of Internet）。Lmabada使用了验证集，其他的用了测试集。
+本文使用了在整个Pile预料数据集上预训练的GPT-Neo-125M/1.3B/2.7B和在部分去重的Pile数据集和一些其他领域数据集上预训练的OPT-125M/1.3B/2.7B作为基座模型。从[Training Data Extraction Challenge](https://github.com/google-research/lm-extraction-benchmark)中采样了一些样本作为目标数据来度量隐私风险，这个数据中包含Pile预料数据集的16个领域的15,000个样本（每个的token序列长度都是200）。然后使用了9个不同的数据集来评估遗忘之后的模型可用性，包括语言推理能力（Hellaswag，Lambada）、常识推理能力（Winagrande，COPA），科学推理能力（ARC-Easy，ARC-Challenge，Piqa，MathQA，PubmedQA）。还是用了四个对话数据集来衡量模型的泛化能力（Wizard of Wikipedia，Empathetic Dialogues，Blended Skill Talk，Wizard of Internet）。Lmabada使用了验证集，其他的用了测试集。
 
 **主要实验结果**
 
