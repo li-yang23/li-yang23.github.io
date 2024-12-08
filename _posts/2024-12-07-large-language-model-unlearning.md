@@ -31,6 +31,7 @@ date: 2024-12-07
 遗忘哈利波特的方法通过根据哈利波特数据训练的模型与反事实输出之间的差异进行微调，就好像未使用哈利波特数据一样。但这种方法可能导致不正确的输出。
 ## 本文方法是什么
 本文假设可以获得遗忘数据集$$D^{fgt}$$，普通数据集$$D^{nor}$$，并且随机获取了一些和遗忘数据集中的提示无关的随机输出$$\mathcal{Y}^{rdn}$$。然后本文联合优化三个遗忘目标
+
 $$
 \begin{aligned}
 \theta_{t+1}&\leftarrow\theta_t-\epsilon_1\cdot\nabla_{\theta_t}\mathcal{L}_{fgt}-\epsilon_2\cdot\nabla_{\theta_t}\mathcal{L}_{rdn}-\epsilon_3\cdot\nabla_{\theta_t}\mathcal{L}_{nor} \\
