@@ -8,18 +8,63 @@
         "type": "tabs",
         "children": [
           {
-            "id": "86c12f9106908474",
+            "id": "86a1fc40b6c61186",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-08-15-LLM-and-GNN.md",
+                "file": "_posts/2024-12-09-An-Adversarial-Perspective-on-Machine-Unlearning-for-AI-Safety.md",
                 "mode": "source",
-                "source": false
-              }
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2024-12-09-An-Adversarial-Perspective-on-Machine-Unlearning-for-AI-Safety"
+            }
+          },
+          {
+            "id": "6b9903b9d1ccdb35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-12-02-llm-unlearning-short-notes.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2024-12-02-llm-unlearning-short-notes"
+            }
+          },
+          {
+            "id": "dcb7bee06d8298d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-12-26-Forgetting-before-Learning-Utilizing-Parametric-Arithmetic-for-Knowledge-Updating-in-Large-Language-Models.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2024-12-26-Forgetting-before-Learning-Utilizing-Parametric-Arithmetic-for-Knowledge-Updating-in-Large-Language-Models"
+            }
+          },
+          {
+            "id": "350a3d8436998636",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-12-17-Towards-Robust-Knowledge-Unlearning.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "2024-12-17-Towards-Robust-Knowledge-Unlearning"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +84,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -54,7 +101,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,15 +111,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9ea1ec7782a0a5a3",
@@ -86,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-08-15-LLM-and-GNN.md",
+                "file": "_posts/2024-11-21-Language-Model-Privacy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +144,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "2024-11-21-Language-Model-Privacy 的反向链接列表"
             }
           },
           {
@@ -103,10 +155,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-08-15-LLM-and-GNN.md",
+                "file": "_posts/2024-11-21-Language-Model-Privacy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "2024-11-21-Language-Model-Privacy 的出链列表"
             }
           },
           {
@@ -117,7 +171,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -126,8 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-08-15-LLM-and-GNN.md"
-              }
+                "file": "_posts/2024-11-21-Language-Model-Privacy.md"
+              },
+              "icon": "lucide-list",
+              "title": "2024-11-21-Language-Model-Privacy 的大纲"
             }
           }
         ]
@@ -147,15 +205,32 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "86c12f9106908474",
+  "active": "6b9903b9d1ccdb35",
   "lastOpenFiles": [
+    "_posts/2024-12-04-Memorization-Without-Overfitting-Analyzing-the-Training-Dynamics-of-Large-Language-Models.md",
+    "_posts/2024-12-05-machanistic-interpretability-for-ai-safety-a-review.md",
+    "_posts/2024-12-06-selective-forgetting-advancing-machine-unlearning-techniques-and-evaluation-in-language-models.md",
+    "_posts/2024-12-07-KGA-A-General-Machine-Unlearning-Framework-Based-on-Knowledge-Gap-Alignment.md",
+    "_posts/2024-12-14-unlearning-bias-in-language-models-by-partitioning-gradients.md",
+    "_posts/2024-12-02-llm-unlearning-short-notes.md",
+    "2024-12-27-Unlearn-What-You-Want-to-Forget-Efficient-Unlearning-for-LLMs.md",
+    "_posts/2024-12-09-An-Adversarial-Perspective-on-Machine-Unlearning-for-AI-Safety.md",
+    "_posts/2024-12-17-Towards-Robust-Knowledge-Unlearning.md",
+    "_posts/2024-12-10-Mechanistic-Unlearning-Robust-Knowledge-Unlearning-and-editing-via-Mechanistic-Localization.md",
+    "2024-12-26-Forgetting-before-Learning-Utilizing-Parametric-Arithmetic-for-Knowledge-Updating-in-Large-Language-Models.md",
+    "_posts/2024-12-07-large-language-model-unlearning.md",
+    "_posts/2024-12-17-DEPN-Detecting-and-Editing-Privacy-Neurons-inPretrained-Language-Models.md",
+    "_posts/2024-12-13-Quark-Controllable-text-generation-with-reinforced-unlearning.md",
+    "_posts/2024-12-08-Whos-harry-potter-approximate-unlearning-in-llms.md",
+    "_posts/2024-12-02-Knowledge unlearning for mitigating privacy risks in language models.md",
+    "_posts/2024-08-15-LLM-and-GNN.md",
+    "_posts/2024-11-21-Language-Model-Privacy.md",
+    "_posts/2024-05-28-federated-unlearning.md",
     "_posts/2024-02-03-DRO.md",
     "_posts/2015-08-14-blog-post-4.md",
     "_posts/2012-08-14-blog-post-1.md",
     "_posts/2013-08-14-blog-post-2.md",
     "_posts/2014-08-14-blog-post-3.md",
-    "_posts/2024-05-28-federated-unlearning.md",
-    "_posts/2024-08-15-LLM-and-GNN.md",
     "_posts/2199-01-01-future-post.md"
   ]
 }

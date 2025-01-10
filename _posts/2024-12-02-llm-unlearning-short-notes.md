@@ -1,15 +1,20 @@
 ---
 title: 大模型遗忘论文阅读杂记
-description: notes for llm unlearning papers do not need to write a whole blog
+description: indices of llm unlearning papers
 tags: ai-explanation llm-unlearning
 category: AI
 date: 2024-12-02
 ---
-## 全局参数调整
 
-### 2023
+## 2022
 
-#### [NIPS 23][Retrain] FairSISA: Ensemble Post-Processing to Improve Fairness of Unlearning in LLMs
+### [NIPS 22][RLHF] Quark: Controllable text generation with reinforced unlearning
+
+大规模语言模型通常会学习与用户期望不一致的行为。生成的文本可能包含攻击性或有害语言，包含大量重复内容，或者与用户期望的情绪不同。本文考虑通过微调语言模型来消除这些不一致，以了解哪些行为不该做。本文引入了量化奖励调节 (Quark)，这是一种优化奖励函数的算法，该函数量化 (不) 想要的属性，同时不会偏离原始模型太远。Quark 交替进行以下操作：(i) 使用当前语言模型收集样本，(ii) 根据奖励将它们按奖励分位数分类，每个分位数由奖励标记标识，并附加到语言模型的输入前面，以及 (iii) 对每个分位数的样本使用标准语言建模损失，这些样本以其奖励标记为条件，同时通过 KL 散度惩罚保持在原始语言模型附近。通过在生成时以高奖励标记为条件，该模型生成的文本表现出较少的不想要的属性。实验表明，对于消除毒性、负面情绪和重复，Quark 的表现优于强基线和最先进的强化学习方法，如 PPO，同时仅依赖于标准语言建模原语。
+
+## 2023
+
+### [NIPS 23][Retrain] FairSISA: Ensemble Post-Processing to Improve Fairness of Unlearning in LLMs
 训练大型语言模型（LLMs）在时间和计算资源方面是一项成本高昂的工作。在无监督预训练阶段使用大量的训练数据使得验证所有数据变得困难，不幸的是，训练过程中可能会摄入不良数据。从头开始重新训练是不切实际的。然而，任何修改都可能改变LLMs的行为，尤其是在公平性等关键维度上。本文评估了SISA的性能-公平性的权衡，并实证展示了SISA确实可以减少LLMs中的公平性。为了解决这个问题，本文为SISA产生的集成模型提出了后处理偏见减轻技术。我们引入了一个后处理公平性改进技术，设计了三种可以处理模型集成的方法，并证明了其中一种方法是模型集成的最优公平预测器。通过实验结果，我们展示了我们称为'FairSISA'的后处理框架的有效性。
 
 **如何评估的公平性**
@@ -18,15 +23,19 @@ date: 2024-12-02
 
 **如何缓解的**
 
-引入了HPS方法，构造一个仅取决于预测标签和敏感属性的派生预测，并在最小化分类损失的同时满足等化几率（equalized odds）。
+引入了HPS方法，构造一个仅取决于预测标签和敏感属性的派生预测，并在最小化分类损失的同时满足等化几率（equalized odds）。最后设计了聚合前调整， 聚合后调整和聚合中调整三种方式。
 
-#### [Arxiv 23][Retrain] Forgetting private textual sequences in language models via leave-one-out ensemble
+### [Arxiv 23][Retrain] Forgetting private textual sequences in language models via leave-one-out ensemble
 近期研究表明，语言模型倾向于记忆训练语料库中罕见或独特的标记序列。部署模型后，实践者可能会被要求根据个人请求从模型中删除任何个人信息。每次个人想要行使被遗忘权时，都重新训练底层模型在计算上是昂贵的。我们采用了教师-学生框架，并提出了一种新颖的留一法(leave-one-out, LOO)集成方法，以使模型忘记需要被遗忘的目标文本序列。在我们的方法中，多个教师在不相交的集合上进行训练；对于每个需要移除的目标序列，我们排除在包含该序列的集合上训练的教师，并聚合剩余教师的预测，以在微调期间提供监督。在LibriSpeech和WikiText-103数据集上的实验表明，所提出的方法比其他对应方法实现了更优越的隐私-效用权衡。
 
 一共训练老师+1个模型，老师使用分片训练子模型并不部署，基础模型使用所有数据并部署。
 
-#### [EMNLP 23][Gradient Ascent] Knowledge unlearning for mitigating privacy risks in language models
-预训练语言模型（LMs）在初始预训练过程中会记忆大量的知识，包括可能侵犯个人生活和身份隐私的信息。以往针对LMs隐私问题的工作主要集中在*数据预处理*和*差分隐私*方法上，这两者都需要重新训练底层的LM。本文提出知识遗忘作为一种替代方法，以减少LMs事后的隐私风险。本文通过简单地对目标token序列执行梯度上升，在不降低大型LMs的一般语言建模性能的情况下忘记目标序列。也就是
+### [ACL 23][Retrain] Unlearning Bias in Language Models by Partitioning Gradients
+
+最近的研究表明，大规模预训练语言模型往往会表现出与种族主义、性别歧视、宗教偏见和一般毒性有关的问题。不幸的是，这些预训练语言模型几乎普遍用于下游任务，而自然语言处理通常用于进行现实世界的预测。因此，在开发过程中尽早消除这些语言模型的偏见对于防止自然语言系统造成的无意伤害越来越重要。为此，我们提出了一种称为分区对比梯度反学习 (PCGU) 的新技术，这是一种用于消除预训练掩码语言模型偏见的灰盒方法。PCGU 旨在**仅优化对特定偏见领域贡献最大的权重**，通过基于对比句子对的梯度计算一阶近似来实现。我们的实验表明，PCGU 既成本低廉，又似乎特别有效地查明大型预训练 Transformer 中隐性社会偏见的来源。虽然我们仅在性别职业领域使用 PCGU 进行训练，但我们发现这样做也可以部分减轻其他领域的偏见。
+
+### [EMNLP 23][Gradient Ascent] Knowledge unlearning for mitigating privacy risks in language models
+预训练语言模型（LMs）在初始预训练过程中会记忆大量的知识，包括可能侵犯个人生活和身份隐私的信息。以往针对LMs隐私问题的工作主要集中在*数据预处理*和*差分隐私*方法上，这两者都需要重新训练底层的LM。本文提出知识遗忘作为一种替代方法，以减少LMs事后的隐私风险。本文通过简单地对目标token序列执行**梯度上升**，在不降低大型LMs的一般语言建模性能的情况下忘记目标序列。也就是
 $$
 \begin{aligned}
 \mathcal{L}_x(\theta)&=-\sum_{t=1}^T\log(p_{\theta}(x_t\vert x_{<t}))\\
@@ -38,24 +47,44 @@ $$
 
 > 但是在遗忘哈利波特的那片工作中发现，单纯的梯度上升可能导致模型失去对语言的理解。此外，梯度上升的效果取决于选择去上升的这部分数据的选择以及目标数据的领域
 
-#### [ACL 23][Knowledge Distillation] Kga: A general machine unlearning framework based on knowledge gap alignment.
+### [ACL 23][Knowledge Distillation] Kga: A general machine unlearning framework based on knowledge gap alignment.
 最近关于“被遗忘权”的立法引发了人们对机器反学习的兴趣，即学习到的模型被赋予忘记特定训练实例信息的功能，就好像它们从未存在于训练集中。以前的工作主要集中在计算机视觉场景中，在很大程度上忽略了 NLP 领域遗忘的本质，因为文本数据比图像包含更多明确和敏感的个人信息。本文提出了一个称为 KGA 的通用遗忘框架来诱导遗忘。与试图恢复梯度或强制模型接近某一特定分布的工作不同，KGA 保持了分布差异（即知识差距）。此外，本文首先将遗忘方法应用于各种 NLP 任务（即分类、翻译、响应生成），并提出了几个有针对性的反学习评估指标。在大规模数据集上的实验表明，KGA 比基线有了全面的改进，其中广泛的分析进一步验证了 KGA 的有效性并为 NLP 任务的反学习提供了见解。
 
-#### [NeurIPS 23][Gradient Ascent] Large Language Model Unlearning
+### [ACL 23][Task Vectors] Forgetting before Learning: Utilizing Parametric Arithmetic for Knowledge Updating in Large Language Models
+大型语言模型 (LLM) 的最新进展展示了其在文本理解和生成方面的卓越能力。然而，即使是更强大的 LLM 也容易从训练语料库中获取错误或过时的信息。直接使用包含新知识的数据进行二次微调可能会因新旧知识之间的冲突而无法有效更新知识。在本文中，我们提出了一种新的微调范式，称为 F-Learning（Forgetting before Learning），它使用参数算法来促进旧知识的遗忘和新知识的学习。在两个公开数据集上的实验结果表明，我们提出的 F-Learning 可以明显提高完全微调和 LoRA 微调的知识更新性能，在大多数情况下同时超越现有基线。此外，我们还发现通过减去 LoRA 的参数来忘记旧知识可以产生与减去完全微调的参数类似的效果，有时甚至会大大超过它。
+
+### [NeurIPS 23][Gradient Ascent] Large Language Model Unlearning
 本文研究如何在大型语言模型 (LLM) 上进行遗忘，即忘记不良的不当行为。本文展示了至少三种将 LLM 与人类偏好对齐的场景可以从反学习中受益：(1) 删除有害反应，(2) 删除受版权保护的内容，以及 (3) 减少幻觉。遗忘作为一种对齐技术，有三个优点。(1) 它只需要负面（例如有害）示例，这些示例比 RLHF（从人类反馈中进行强化学习）所需的正面（例如有帮助且通常是人类编写的）示例更容易和更低成本地收集（例如通过红队或用户报告）。(2) 它在计算上是高效的；成本与轻度监督微调相当。(3) 当我们知道哪些训练样本导致不当行为时，它特别有效。
 
 本文认为如果从业者资源有限，优先考虑的是停止生成不良输出而不是尝试生成理想输出，那么遗忘就特别有吸引力。尽管只有负样本，但消融研究表明，遗忘仍然可以实现比RLHF更好的对齐性能，而计算时间仅为RLHF的2%。
 
-#### [Arxiv 23][General Alternatives] Who's Harry Potter? Approximate Unlearning in LLMs
+### [Arxiv 23][General Alternatives] Who's Harry Potter? Approximate Unlearning in LLMs
 
 大型语言模型 (LLM) 在海量互联网语料库上进行训练，这些语料库通常包含受版权保护的内容。这对这些模型的开发者和用户以及原作者和出版商构成了法律和道德挑战。本文提出了一种遗忘技术，用于从 LLM 中遗忘训练数据的子集，而无需从头开始重新训练。
 本文在从 Llama2-7b 模型遗忘哈利波特书籍的任务上评估了我们的技术。在大约 1 GPU 小时的微调中，本文有效地消除了模型生成或调用哈利波特相关内容的能力，而其在常见基准测试上的表现几乎不受影响。
 由三个主要部分组成：首先使用一个在目标数据上进一步训练的强化模型，通过将其logit与基础模型的logit进行比较，识别与目标最相关的token。然后用通用的对应词替换目标数据中的特殊表达，并利用模型自身的预测为每个token生成替代token。这些token旨在近似未在目标数据上训练的模型的下一个token预测。在这些替代token上对模型进行微调，这样每当模型被提示上下文时，就会有效地从模型的内存中删除原始文本。
 
-### 2024
+### [EMNLP 23][Direct Modification] DEPN: Detecting and Editing Privacy Neurons in Pretrained Language  Models
 
-#### [Arxiv 24][Gradient Ascent] Selective forgetting: Advancing machine unlearning techniques and evaluation in language models
+在大量数据上进行预训练的大型语言模型可以捕获训练数据中的丰富知识和信息。先前的研究揭示了预训练语言模型中数据记忆和反省的能力，这带来了数据泄露的风险。为了有效降低这些风险，本文提出了一个框架DEPN来检测和编辑预训练语言模型中的隐私神经元，部分灵感来自知识神经元和模型编辑。在DEPN中，本文引入了一种新方法，称为隐私神经元检测器，用于定位与隐私信息相关的神经元，然后通过将其激活设置为零来编辑这些检测到的隐私神经元。此外，本文提出了一种隐私神经元聚合器，以批处理方式取消记忆隐私信息。实验结果表明，DEPN可以显着有效地减少隐私数据泄露的风险，而不会降低模型的性能。此外，本文从多个角度（包括模型大小、训练时间、提示、隐私神经元分布）实证证明了模型记忆与隐私神经元之间的关系，说明了本文方法的鲁棒性。
+
+### [EMNLP 23][Extra Layer]Unlearn What You Want to Forget: Efficient Unlearning for LLMs
+大型语言模型 (LLM) 已通过对大量文本数据进行预训练和记忆取得了重大进展，然而，这一过程可能会受到隐私问题和数据保护法规违反的影响。因此，能够**轻松地从此类模型中删除与个人用户相关的数据，同时在删除后不会降低其预测质量的能力**变得越来越重要。本文提出了一个高效的反学习框架，通过在 Transformer 中引入使用选择性师生目标学习的轻量级反学习层，该框架可以有效地更新 LLM，而无需在数据删除后重新训练整个模型。此外，我们引入了一种融合机制，可以有效地结合不同的反学习层，这些反学习层会学习忘记不同的数据集来处理一系列遗忘操作。分类和生成任务上的实验证明了我们提出的方法与最先进的基线相比的有效性。
+
+本文使用参数高效微调方法，为模型添加adapter层，然后使用了三个损失函数联合训练，分别负责**最小化保留集上的KL散度和最大化遗忘集上的KL散度**、**保留集上梯度下降来保持模型可用性**，**遗忘集上预训练目标梯度上升来强化遗忘效果**。
+
+消融实验发现第一个损失函数保证了在遗忘集上的表现会变差，第二个损失函数保证了在保留集上的效果，第三个损失函数保持了MLM损失，提升了提取遗忘数据的难度。
+
+## 2024
+
+### [Arxiv 24][Gradient Ascent] Selective forgetting: Advancing machine unlearning techniques and evaluation in language models
 
 本文介绍了一种用于在语言模型中实现精确和选择性遗忘的新方法。与以前采用完全相反的训练目标的方法不同，这种方法旨在减轻对语言模型性能的不利影响，特别是在生成任务中。此外，还提出了两个创新的评估指标：敏感信息提取可能性 (S-EL) 和敏感信息记忆准确度 (S-MA)，旨在衡量敏感信息消除的有效性。为了加强遗忘框架，提出了一种注释敏感范围的有效方法，涉及在线和离线策略。在线选择机制利用语言概率分数来确保计算效率，而离线注释则需要基于大型语言模型 (LLM) 的强大两阶段过程。
 
 
+### [Arxiv 24][Adversarial Training] Towards Robust Knowledge Unlearning: An Adversarial Framework for Assessing and Improving Unlearning Robustness in Large Language Models
+LLM 在许多领域取得了成功，但仍然受到训练语料库中问题内容的困扰。LLM 反学习旨在减少它们的影响并避免不良行为。然而，现有的反学习方法仍然容易受到对抗性查询的攻击，并且反学习的知识会在手动设计的攻击查询之后重新出现。作为红队主动评估反学习模型漏洞的一部分，本文设计了动态反学习攻击 (DUA)，这是一个动态的自动化框架来攻击这些模型并评估其鲁棒性。它优化了对抗性后缀以在各种场景中重新引入未学习的知识。本文发现，即使不透露反学习模型的参数，55.2% 的问题也可以重现反学习的知识。为了解决这一弱点，本文提出了潜在对抗性反学习 (LAU)，这是一个通用框架，可以有效增强反学习过程的鲁棒性。它将反学习过程公式化为最小-最大优化问题，并通过两个阶段解决：攻击阶段，训练扰动向量并将其添加到 LLM 的潜在空间以恢复反学习的知识；防御阶段，使用先前训练的扰动向量来增强反学习模型的鲁棒性。借助LAU框架，本文获得了两种鲁棒的反学习方法：AdvGA 和 AdvNPO。本文在多个反学习基准和各种模型上进行了广泛的实验，并证明它们将反学习效果提高了 53.5% 以上，仅导致邻近知识减少不到 11.6%，并且几乎不影响模型的一般能力。
+
+### [Arxiv 24][Gradient Ascent] Mechanistic Unlearning: Robust Knowledge Unlearning and Editing via Mechanistic Localization
+
+大型语言模型中的知识编辑和反学习方法寻求编辑或删除不需要的知识或能力，而不会损害一般语言建模性能。本文研究了**机械可解释性（部分旨在识别与构成模型能力的特定可解释机制相关的模型组件（电路））如何提高编辑和反学习的精度和有效性。** 本文发现在训练通过不同方法定位的组件时，反学习和编辑稳健性存在明显差异。本文强调了主要基于保留输出来定位组件的方法与寻找具有可预测中间状态的高级机制的方法之间的重要区别。特别是，将编辑/遗忘定位到与事实回忆查找表机制相关的组件 1) 会导致跨不同输入/输出格式的更稳健的编辑/遗忘，并且 2) 抵制重新学习不需要的信息的尝试，同时与基线相比减少了意外的副作用，在体育事实数据集和多个模型的 CounterFact数据集上都是如此。某些局部编辑比任何其他基线都更能破坏模型中的潜在知识，从而使反学习对各种攻击更具鲁棒性。
